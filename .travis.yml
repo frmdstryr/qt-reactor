@@ -6,9 +6,15 @@ matrix:
     - python: 3.6
       dist: xenial
       sudo: true
-
+env:
+    - QT_API=PySide
+    - QT_API=PyQt4
+    - QT_API=PyQt5
+    - QT_API=PySide2
+    
 install:
   - pip install pytest-qt pytest-coverage
+  - pip install $QT_API
   - python setup.py develop
 
 script:
