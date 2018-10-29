@@ -12,7 +12,7 @@ install:
   - python setup.py develop
 
 script:
-  - pytest -v tests.py --cov qreactor --coverage-xml
+  - pytest -v tests.py --cov qreactor --cov-report xml
 
 after_success:
   - codecov
