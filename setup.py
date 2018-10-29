@@ -23,17 +23,17 @@ classifiers = [
 ]
 
 setup(
-    name='qt5reactor',
-    version='0.5',
+    name='qt-reactor',
+    version='0.6',
     license='MIT',
     classifiers=classifiers,
     author='Christopher R. Wood',
     author_email='chris@leastauthority.com',
-    description='Twisted Qt Integration',
+    description='Twisted Qt Integration for Qt4 and Qt5 using qtpy',
     long_description=read('README.rst'),
-    url='https://github.com/sunu/qt5reactor',
+    url='https://github.com/frmdstryr/qt-reactor',
     packages=find_packages(),
-    py_modules=['qt5reactor'],
-    keywords=['Qt', 'twisted'],
-    install_requires=['twisted']
+    py_modules=['qreactor'],
+    keywords=['Qt', 'twisted', 'qtpy'],
+    install_requires=['twisted', 'qtpy']
 )

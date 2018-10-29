@@ -1,4 +1,7 @@
-Qt5Reactor
+QReactor
+
+Forked from qt5reactor which was forked from qt4reactor and now uses 
+[qtpy](https://github.com/spyder-ide/qtpy) to provide to support both.
 
 Using the QtReactor
 -------------------
@@ -7,7 +10,7 @@ Install using pip
 
 ::
 
-    pip install qt5reactor
+    pip install qt-reactor
 
 Before running / importing any other Twisted code, invoke:
 
@@ -15,15 +18,15 @@ Before running / importing any other Twisted code, invoke:
 
     app = QApplication(sys.argv) # your code to init QtCore
     from twisted.application import reactors
-    reactors.installReactor('qt5')
+    reactors.installReactor('qt')
 
 or
 
 ::
 
     app = QApplication(sys.argv) # your code to init QtCore
-    import qt5reactor
-    qt5reactor.install()
+    import qreactor
+    qreactor.install()
 
 Testing
 ~~~~~~~
@@ -46,6 +49,6 @@ Install the reactor before calling ``unittest.main()``.
 
 ::
 
-    import qt5reactor
-    qt5reactor.install()
+    import qreactor
+    qreactor.install()
     unittest.main(...)

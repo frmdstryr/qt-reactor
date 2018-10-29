@@ -1,0 +1,18 @@
+language: python
+
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.6
+      dist: xenial
+      sudo: true
+
+install:
+  - pip install pytest-qt pytest-coverage
+  - python setup.py develop
+
+script:
+  - pytest -v tests.py --cov qreactor --coverage-xml
+
+after_success:
+  - codecov

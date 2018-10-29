@@ -5,4 +5,4 @@
 
 from twisted.application.reactors import Reactor
 
-qt5 = Reactor('qt5', 'qt5reactor', 'PyQt5 integration reactor')
+qt = Reactor('qt', 'qreactor', 'Qt integration reactor')

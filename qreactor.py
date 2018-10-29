@@ -52,7 +52,7 @@
 # Thomas Herve
 # Timothy Allen
 # Tom Prince
-
+# Jairus Martin
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
 # "Software"), to deal in the Software without restriction, including
@@ -78,8 +78,8 @@ This module provides support for Twisted to be driven by the Qt mainloop.
 
 In order to use this support, simply do the following::
     |  app = QApplication(sys.argv) # your code to init Qt
-    |  import qt5reactor
-    |  qt5reactor.install()
+    |  import qreactor
+    |  qreactor.install()
 
 Then use twisted.internet APIs as usual.  The other methods here are not
 intended to be called directly.
@@ -106,8 +106,8 @@ Subsequent port by therve
 
 import sys
 
-from PyQt5.QtCore import (
-    pyqtSignal, QCoreApplication, QEventLoop, QObject, QSocketNotifier, QTimer)
+from qtpy.QtCore import (
+    Signal, QCoreApplication, QEventLoop, QObject, QSocketNotifier, QTimer)
 from twisted.internet import posixbase
 from twisted.internet.interfaces import IReactorFDSet
 from twisted.python import log, runtime
@@ -117,7 +117,7 @@ from zope.interface import implementer
 class TwistedSocketNotifier(QObject):
     """Connection between an fd event and reader/writer callbacks."""
 
-    activated = pyqtSignal(int)
+    activated = Signal(int)
 
     def __init__(self, parent, reactor, watcher, socketType):
         QObject.__init__(self, parent)
