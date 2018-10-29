@@ -3,19 +3,22 @@ language: python
 matrix:
   include:
     - python: 2.7
+      env: QT_API=PySide
+    - python: 2.7
+      env: QT_API=PySide2
     - python: 3.6
+      env: QT_API=PyQt5
       dist: xenial
       sudo: true
-env:
-    - QT_API=PySide
-    - QT_API=PyQt4
-    - QT_API=PyQt5
-    - QT_API=PySide2
+    - python: 3.6
+      env: QT_API=PySide2
+      dist: xenial
+      sudo: true
     
 install:
   - pip install pytest-qt pytest-coverage
   - pip install $QT_API
-  - python setup.py develop
+  - pip install .
 
 script:
   - pytest -v tests.py --cov qreactor --cov-report xml
