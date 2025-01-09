@@ -24,12 +24,12 @@ classifiers = [
 
 setup(
     name='qt-reactor',
-    version='0.6',
+    version='0.6.1',
     license='MIT',
     classifiers=classifiers,
     author='Christopher R. Wood',
     author_email='chris@leastauthority.com',
-    description='Twisted Qt Integration for Qt4 and Qt5 using qtpy',
+    description='Twisted Qt integration for Qt4, Qt5, and Qt6 using qtpy',
     long_description=read('README.rst'),
     url='https://github.com/frmdstryr/qt-reactor',
     packages=find_packages(),
